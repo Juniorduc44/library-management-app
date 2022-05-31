@@ -83,6 +83,7 @@ if __name__ == '__main__':
     databaseName = input("Enter the name of the database file with extension:")
     bookDatabase = open(databaseName, "r")
     for book in bookDatabase:
-        booksList.append(book)
+        fp = book.replace("\n","") #added in order to fix the lending function so to grab exact books from list minus the "\n" after extracting from text file.
+        booksList.append(fp)
     library = Library(booksList, "PythonX")
     main()
